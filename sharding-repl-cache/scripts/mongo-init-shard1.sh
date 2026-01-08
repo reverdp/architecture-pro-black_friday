@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker compose exec -T shard1a mongosh --port 27018 --quiet <<EOF
+rs.initiate({_id:"shard1", members:[    
+  {_id:0, host:"shard1a:27018"},
+  {_id:1, host:"shard1b:27028"},
+  {_id:2, host:"shard1c:27038"}
+]})
+EOF
+
+echo
+read -r -p "Готово. Нажми Enter чтобы закрыть..." _
