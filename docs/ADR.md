@@ -23,7 +23,7 @@
 * Для коллекции Cart в качестве ключа шардирования выбран идентификатор пользователя (hashed ownerKey) - не будет меняться при смене гостя на пользователя.
 Оптимально для получения активной корзины. Плюсом будет равномерное распределение данных по шардам
 
-[ER диаграмма коллекций](https://github.com/reverdp/architecture-pro-black_friday/blob/schemas/ER-Mobile_World_ER_Diagram.png)
+[ER диаграмма коллекций](https://github.com/reverdp/architecture-pro-black_friday/blob/sprint4/schemas/ER-Mobile_World_ER_Diagram.png)
 
 ### <a name="_bjrr7veeh80c"></a>**Альтернативы**
 Как альтернатива можно для коллекции Products в качестве ключа шардирования выбрать идентификатор продукта, поиск товаров будет работать медленнее, плюсом будет равномерное распределение данных по шардам
@@ -152,7 +152,7 @@
 * Корзина
 * Товары (справочные данные)
 
-[Примеры таблиц в Cassandra](https://github.com/reverdp/architecture-pro-black_friday/blob/schemas/cassandra_examples.txt)
+[Примеры таблиц в Cassandra](https://github.com/reverdp/architecture-pro-black_friday/blob/sprint4/schemas/cassandra_examples.txt)
 
 Стратегию Hinted Handoff можно применить для следующих сущностей:
 * Cart
