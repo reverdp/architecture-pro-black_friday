@@ -2,8 +2,6 @@
 
 ## Как запустить
 
-Переходим в папку sharding-repl-cache
-
 Запускаем mongodb и приложение
 
 ```shell
@@ -13,7 +11,6 @@ docker compose up -d
 Выполняем скрипты для инициализации mongodb
 
 ```shell
-./scripts/redis-init.sh
 ./scripts/mongo-init-config.sh
 ./scripts/mongo-init-shard1.sh
 ./scripts/mongo-init-shard2.sh

@@ -1,0 +1,68 @@
+@startuml
+title Mobile World ER Diagram
+
+top to bottom direction
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+class Order {
+  +String id
+  +String customerId
+  +Datetime createdAt
+  +String status
+  +Float totalAmount
+  +String geoZoneId
+  []OrderItem items
+}
+
+class OrderItem {
+  +String productId
+  +Integer quantity
+  +Float price
+}
+
+class Product {
+  +String id
+  +String name
+  +String categoryId
+  +Float price
+  +[]ProductStock stock
+  +[]ProductAttribute attributes
+}
+
+class ProductStock {
+  +String geoZoneId
+  +Integer stockQty
+}
+
+class ProductAttribute {
+  +String key
+  +String value
+}
+
+class Cart {
+  +String id
+  +String userId
+  +String sessionId
+  +String ownerKey
+  +Datetime createdAt
+  +Datetime updatedAt
+  +Datetime expiresAt
+  +String status
+  +[]CartItem items
+}
+
+class CartItem {
+  +String productId
+  +Integer quantity
+}
+
+
+Order "1" -- "1..*" OrderItem : has
+Product "1" -- "0..*" OrderItem : has
+Product "1" -- "1..*" ProductStock : has
+Product "1" -- "0..*" ProductAttribute : has
+Cart "1" -- "1..*" CartItem : has
+Product "1" -- "0..*" CartItem : has
+
+@enduml
